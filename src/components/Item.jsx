@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemCount from './ItemCount';
 
-export default function Item({ name, thumbnail, category, description, rate, price, realStock }) {
+export default function Item({ name, thumbnail, category, description, rate, price, stock }) {
     return (
         <div class="w-full max-w-sm rounded-lg shadow-md bg-emerald-900">
             <img class="p-8 rounded-t-lg" src={thumbnail} alt="product img" />
@@ -18,11 +18,11 @@ export default function Item({ name, thumbnail, category, description, rate, pri
                     </div>
                 </div>
                 <div class="flex items-center justify-between mt-2.5 mb-5">
-                    <h1 className='text-white'>Units available: {realStock}</h1>
+                    <h1 className='text-white'>Units available: {stock}</h1>
                     <span class="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <ItemCount stock={realStock} initial={0} />
+                    <ItemCount stock={stock} initial={0} />
                 </div>
             </div>
         </div>
