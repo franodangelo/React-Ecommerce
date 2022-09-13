@@ -5,13 +5,12 @@ import itemsData from './utils/itemsData';
 import promise from './utils/promise';
 
 export default function ItemList() {
-
     const [items, setItems] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
         try {
-            promise(itemsData.filter(i => i.id === parseInt(id))).then(res => setItems(res));
+            promise(itemsData).then(res => setItems(res));
         } catch (error) {
             console.log(error);
         }
@@ -20,10 +19,10 @@ export default function ItemList() {
     console.log(items);
 
     return (
-        <div>
+        <div className='grid grid-cols-3 p-4 m-auto gap-8'>
             {items.length > 0 ? items.map(i => {
                 return <Item
-                    thumbnail={i.thumbnail}
+                    thumbnailCard={i.thumbnailCard}
                     name={i.name}
                     category={i.category}
                     description={i.description}
