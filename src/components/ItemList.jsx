@@ -19,7 +19,7 @@ export default function ItemList() {
     console.log(items);
 
     return (
-        <div className='grid grid-cols-3 p-4 m-auto gap-8'>
+        <div className='grid grid-cols-3 m-auto gap-8'>
             {items.length > 0 ? items.map(i => {
                 return <Item
                     thumbnailCard={i.thumbnailCard}
