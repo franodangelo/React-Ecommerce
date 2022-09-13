@@ -1,10 +1,10 @@
 import React from 'react';
 import ItemCount from './ItemCount';
 
-export default function Item({ name, thumbnail, category, description, rate, price, stock }) {
+export default function Item({ name, thumbnailCard, category, description, rate, price, stock }) {
     return (
         <div class="w-full max-w-sm rounded-lg shadow-md bg-emerald-900">
-            <img class="p-8 rounded-t-lg" src={thumbnail} alt="product img" />
+            <img class="p-8 rounded-t-lg" src={thumbnailCard} alt="product img" />
             <div class="px-5 pb-5">
                 <div className='flex justify-between'>
                     <h5 class="text-xl font-semibold text-white">{name}</h5>
