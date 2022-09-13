@@ -7,10 +7,11 @@ export default function Navbar({cartItems}) {
             <h1 className='font-bold text-xl text-emerald-900'>My e-commerce.</h1>
             <section>
                 <ul className='flex justify-between gap-8 text-emerald-900'>
-                    <li className='font-semibold text-sm uppercase'>Section 1</li>
-                    <li className='font-semibold text-sm uppercase'>Section 2</li>
-                    <li className='font-semibold text-sm uppercase'>Section 3</li>
-                    <li className='font-semibold text-sm uppercase'>Section 4</li>
+                    <li className='font-semibold text-sm uppercase'>Rackets</li>
+                    <li className='font-semibold text-sm uppercase'>Strings</li>
+                    <li className='font-semibold text-sm uppercase'>Bags</li>
+                    <li className='font-semibold text-sm uppercase'>Balls & Accesories</li>
+                    <li className='font-semibold text-sm uppercase'>Shoes & Clothes</li>
                 </ul>
             </section>
             <div className='flex items-center justify-between gap-4'>
