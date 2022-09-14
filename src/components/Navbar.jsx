@@ -10,10 +10,27 @@ export default function Navbar({ cartItems }) {
             </Link>
             <section>
                 <ul className='flex justify-between gap-8 text-rose-900'>
-                    <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>Pro Staff</li>
-                    <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>Blade</li>
-                    <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>Clash</li>
-                    <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>Ultra</li>
+                    <Link to="/rackets/prostaff">
+                        <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>
+                            Pro Staff
+                        </li>
+                    </Link>
+                    <Link to="/rackets/blade">
+                        <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>
+                            Blade
+                        </li>
+                    </Link>
+                    <Link to="/rackets/clash">
+                        <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>
+                            Clash
+                        </li>
+                    </Link>
+                    <Link to="/rackets/ultra">
+                        <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>
+                            Ultra
+                        </li>
+                    </Link>
+
                 </ul>
             </section>
             <div className='flex items-center justify-between gap-4'>
