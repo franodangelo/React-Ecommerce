@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 export default function Navbar({ cartItems }) {
     return (
         <nav className='flex w-full h-20 px-8 justify-between items-center bg-rose-300'>
-            <h1 className='font-bold text-xl text-rose-900 uppercase'>Wlsn</h1>
+            <Link to="/">
+                <h1 className='font-bold text-xl text-rose-900 uppercase'>Wlsn</h1>
+            </Link>
             <section>
                 <ul className='flex justify-between gap-8 text-rose-900'>
                     <li className='font-semibold text-sm uppercase cursor-pointer hover:font-bold'>Pro Staff</li>
