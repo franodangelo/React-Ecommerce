@@ -9,7 +9,7 @@ export default function App() {
       <Navbar cartItems={0} />
       <Routes>
         <Route exact path="/" element={<ItemListContainer />} />
-        <Route path='/category/:id' element={<ItemListContainer />} />
+        <Route exact path='/category/:id' element={<ItemListContainer />} />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>

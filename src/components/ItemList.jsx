@@ -6,12 +6,13 @@ import Item from './Item';
 
 export default function ItemList() {
     const [items, setItems] = useState([]);
-    const { id, subCategory } = useParams();
+    const { id } = useParams();
+    console.log(id);
 
     useEffect(() => {
         try {
-            if (subCategory) {
-                promise(itemsData.filter(i => i.subCategory === subCategory)).then(res => setItems(res))
+            if (id) {
+                promise(itemsData.filter(i => i.category === parseInt(id))).then(res => setItems(res))
             } else {
                 promise(itemsData).then(res => setItems(res));
             }
