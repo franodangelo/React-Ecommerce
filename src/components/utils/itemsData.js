@@ -147,7 +147,7 @@ const itemsData = [
         rate: 2,
         ratings: 1,
         price: 269.00,
-        discountPercentage: 0,
+        discountPercentage: null,
         stock: 12,
         interestFreePayments: 3,
         freeShipping: true,
