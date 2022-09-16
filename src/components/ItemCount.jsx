@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-export default function ItemCount({ stock, initial, cartItems }) {
+export default function ItemCount({ stock, initial, cartItems, onAdd }) {
     const [count, setCount] = useState(initial);
-    // const [newStock, setNewStock] = useState(stock);
     const [newCartItems, setNewCartItems] = useState(cartItems);
 
     useEffect(() => {
@@ -29,18 +28,18 @@ export default function ItemCount({ stock, initial, cartItems }) {
     }
 
     return (
-        <div className='flex flex-col w-full justify-between items-center gap-4'>
-            <section className='flex gap-2'>
-                <button className='h-8 w-8 justify-center rounded-full font-bold text-rose-700 bg-rose-200 border-2 border-rose-700'
+        <div className='flex w-full justify-between items-center gap-2'>
+            <section className='flex basis-1/4 gap-2'>
+                <button className='h-8 w-8 justify-center font-bold text-rose-700 rounded bg-rose-200 border-2 border-rose-700'
                     onClick={subtractUnit}>-
                 </button>
-                <h1 className='flex items-center mx-2 px-4 bg-white rounded'>{count}</h1>
-                <button className='h-8 w-8 justify-center rounded-full font-bold text-rose-700 bg-rose-200 border-2 border-rose-700'
+                <h1 className='flex items-center mx-auto px-4 bg-white rounded'>{count}</h1>
+                <button className='h-8 w-8 justify-center font-bold text-rose-700 rounded bg-rose-200 border-2 border-rose-700'
                     onClick={addUnit}>+
                 </button>
             </section>
-            <button className='flex justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded-full bg-rose-700'
-                onClick={addToCart}>Add to cart
+            <button className='flex basis-3/4 justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700'
+                onClick={() => {onAdd(stock, count)}}>Add to cart
             </button>
         </div>
     )

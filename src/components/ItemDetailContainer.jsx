@@ -6,15 +6,12 @@ import promise from "./utils/promise";
 import itemsData from "./utils/itemsData";
 
 export default function ItemDetailContainer() {
-
     const [data, setData] = useState({});
     const { id } = useParams();
 
     useEffect(() => {
         promise(itemsData.find(i => i.id === parseInt(id))).then(res => setData(res));
     }, [id])
-
-    console.log(data);
 
     return (
         <div>

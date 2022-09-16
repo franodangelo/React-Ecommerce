@@ -7,7 +7,6 @@ import Item from './Item';
 export default function ItemList() {
     const [items, setItems] = useState([]);
     const { id } = useParams();
-    console.log(id);
 
     useEffect(() => {
         try {
