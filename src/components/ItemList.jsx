@@ -21,18 +21,16 @@ export default function ItemList() {
     }, [id])
 
     return (
-        <div className='grid grid-cols-3 m-auto gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-auto gap-8'>
             {items.length > 0 ? items.map(i => {
                 return <Item
                     key={i.id}
-                    thumbnailCard={i.thumbnailCard}
                     id={i.id}
+                    thumbnailCard={i.thumbnailCard}
                     name={i.name}
-                    category={i.category}
-                    description={i.description}
                     rate={i.rate}
                     price={i.price}
-                    stock={i.stock}
+                    discountPercentage={i.discountPercentage}
                 />
             }) : <p>Loading items...</p>}
         </div>

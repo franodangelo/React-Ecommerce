@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default function Item(props) {
     return (
-        <div className="flex max-w-md bg-white shadow-md rounded-lg overflow-hidden hover:scale-105 ease-in-out duration-300">
-            <img className="w-1/3 object-cover"
+        <div className="flex flex-col lg:flex-row bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
+
+            <img className="w-full lg:w-1/3 object-cover"
                 src={props.thumbnailCard}
-                alt="item">
+                alt="item thumbnail">
             </img>
-            <div className="w-2/3 p-4">
-                <h1 className="text-stone-900 font-bold text-lg">{props.name}</h1>
+
+            <div className="w-full lg:w-2/3 p-4">
+                <h1 className="text-stone-900 font-bold text-xl lg:text-lg">{props.name}</h1>
+
                 <div className="flex item-center mt-2">
                     <p className="text-center">{props.rate}</p>
                     <p className="text-center">{props.ratings}</p>
@@ -21,14 +24,19 @@ export default function Item(props) {
                             <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
                         </svg>}
                 </div>
-                <div className="flex item-center justify-between mt-3">
-                    <h1 className="text-stone-700 font-bold text-xl">${props.price}.00</h1>
+
+                <section className="flex items-center justify-between mt-3">
+                    <div className='flex items-center gap-2'>
+                        {props.discountPercentage ? <p className="font-bold text-sm line-through">${props.price.toFixed(2)}</p> : null}
+                        <h1 className="font-bold text-2xl lg:text-xl text-rose-700">${props.discountPercentage != null ? ((100 - props.discountPercentage) * props.price / 100) : props.price.toFixed(2)}</h1>
+                    </div>
                     <Link to={`/item/${props.id}`}>
-                        <button className="px-3 py-2 bg-rose-800 text-white text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300">
+                        <button className="px-3 py-2 bg-rose-700 text-white text-sm lg:text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300">
                             More details
                         </button>
                     </Link>
-                </div>
+                </section>
+
             </div>
         </div>
     )
