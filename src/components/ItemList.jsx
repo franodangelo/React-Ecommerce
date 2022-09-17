@@ -11,9 +11,9 @@ export default function ItemList() {
     useEffect(() => {
         try {
             if (id) {
-                promise(itemsData.filter(i => i.category === parseInt(id))).then(res => setItems(res))
+                promise(itemsData.filter(i => i.category === parseInt(id)), 1000).then(res => setItems(res))
             } else {
-                promise(itemsData).then(res => setItems(res));
+                promise(itemsData, 1000).then(res => setItems(res));
             }
         } catch (error) {
             console.log(error);

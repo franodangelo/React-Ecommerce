@@ -10,7 +10,7 @@ export default function ItemDetailContainer() {
     const { id } = useParams();
 
     useEffect(() => {
-        promise(itemsData.find(i => i.id === parseInt(id))).then(res => setData(res));
+        promise(itemsData.find(i => i.id === parseInt(id)), 1000).then(res => setData(res));
     }, [id])
 
     return (
