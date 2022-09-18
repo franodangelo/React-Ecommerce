@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Item(props) {
     return (
@@ -26,7 +26,7 @@ export default function Item(props) {
                 </div>
 
                 <section className="flex items-center justify-between mt-3">
-                    <div className='flex items-center gap-2'>
+                    <div className="flex items-center gap-2">
                         {props.discountPercentage ? <p className="font-bold text-sm line-through">${props.price.toFixed(2)}</p> : null}
                         <h1 className="font-bold text-2xl lg:text-xl text-rose-700">${props.discountPercentage != null ? ((100 - props.discountPercentage) * props.price / 100) : props.price.toFixed(2)}</h1>
                     </div>

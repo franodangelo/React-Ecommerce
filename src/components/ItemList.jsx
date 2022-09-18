@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import itemsData from './utils/itemsData';
-import promise from './utils/promise';
-import Item from './Item';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import itemsData from "./utils/itemsData";
+import promise from "./utils/promise";
+import Item from "./Item";
 
 export default function ItemList() {
     const [items, setItems] = useState([]);
@@ -11,9 +11,11 @@ export default function ItemList() {
     useEffect(() => {
         try {
             if (id) {
-                promise(itemsData.filter(i => i.category === parseInt(id)), 500).then(res => setItems(res))
+                promise(itemsData.filter(i => i.category === parseInt(id)), 500)
+                .then(res => setItems(res))
             } else {
-                promise(itemsData, 500).then(res => setItems(res));
+                promise(itemsData, 500)
+                .then(res => setItems(res));
             }
         } catch (error) {
             console.log(error);
@@ -21,7 +23,7 @@ export default function ItemList() {
     }, [id])
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-auto gap-8'>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-auto gap-8">
             {items.length > 0 ? items.map(i => {
                 return <Item
                     key={i.id}

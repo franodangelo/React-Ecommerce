@@ -18,8 +18,6 @@ export default function ItemDetail({ item }) {
         setAdded(true);
     }
 
-    console.log(added);
-
     return (
         <section className="overflow-hidden h-auto">
             <div className="flex flex-col container px-4 py-8 mx-auto gap-8">
@@ -39,16 +37,6 @@ export default function ItemDetail({ item }) {
                         </h2>
                         <div className="flex justify-between items-center">
                             <h1 className="py-2 font-bold text-3xl uppercase text-stone-900">{item.name}</h1>
-                            {/* <button className="w-8 h-8 rounded-full inline-flex items-center justify-center bg-stone-100 text-stone-400">
-                                <svg fill="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    className="w-4 h-4"
-                                    viewBox="0 0 24 24">
-                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                                </svg>
-                            </button> */}
                         </div>
                         <div className="flex py-2 items-center">
                             <span className="flex items-center gap-4">
@@ -85,13 +73,12 @@ export default function ItemDetail({ item }) {
                                 {item.discountPercentage ? <p className="text-stone-600">-{item.discountPercentage}% OFF</p> : null}
                             </div>
                             <p>{item.interestFreePayments} interest free payments of ${(item.price / item.interestFreePayments).toFixed(2)}</p>
-                            {/* <button className='px-4 py-2 rounded font-bold uppercase text-rose-100 bg-rose-700'>Checkout</button> */}
                         </div>
                         {added === false ?
                             (<ItemCount stock={itemStock} initial={itemCount} onAdd={onAdd} />) :
                             (<Link to="/cart">
-                                <button className='flex w-full justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700'>
-                                    Go to Cart
+                                <button className="flex w-full justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700">
+                                    Go to bag
                                 </button>
                             </Link>
                             )

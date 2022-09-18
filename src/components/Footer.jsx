@@ -3,29 +3,29 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <footer className='flex flex-col md:flex-row w-full h-[120px] mt-10 px-8 py-4 justify-between items-center bg-rose-700'>
+        <footer className="flex flex-col md:flex-row w-full h-[120px] mt-10 px-8 py-4 justify-between items-center bg-rose-700">
             <section className="flex items-center gap-8">
                 <Link to="/">
-                    <h1 className='font-bold text-lg text-white uppercase'>Wlsn</h1>
+                    <h1 className="font-bold text-lg text-white uppercase">Wlsn</h1>
                 </Link>
-                <ul className='flex justify-between gap-4'>
+                <ul className="flex justify-between gap-4">
                     <Link to="/category/1">
-                        <li className='font-bold text-xs uppercase cursor-pointer'>
+                        <li className="font-bold text-xs uppercase cursor-pointer">
                             Pro Staff
                         </li>
                     </Link>
                     <Link to="/category/2">
-                        <li className='font-bold text-xs uppercase cursor-pointer'>
+                        <li className="font-bold text-xs uppercase cursor-pointer">
                             Blade
                         </li>
                     </Link>
                     <Link to="/category/3">
-                        <li className='font-bold text-xs uppercase cursor-pointer'>
+                        <li className="font-bold text-xs uppercase cursor-pointer">
                             Clash
                         </li>
                     </Link>
                     <Link to="/category/4">
-                        <li className='font-bold text-xs uppercase cursor-pointer'>
+                        <li className="font-bold text-xs uppercase cursor-pointer">
                             Ultra
                         </li>
                     </Link>
