@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BagWidget from "./BagWidget";
 
-export default function Navbar({ cartItems }) {
+export default function Navbar({ bagItems }) {
     return (
         <nav className="flex w-full h-20 mb-10 px-8 justify-between items-center shadow-lg">
             <Link to="/">
-                <h1 className="font-bold text-lg md:text-2xl text-rose-700 uppercase hover:tracking-widest ease-in-out duration-300">
+                <h1 className="font-bold text-lg md:text-2xl text-rose-700 uppercase">
                     Wlsn
                 </h1>
             </Link>
@@ -36,7 +36,7 @@ export default function Navbar({ cartItems }) {
             </section>
             <div className="flex items-center">
                 <BagWidget />
-                <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">{cartItems}</span>
+                <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">{bagItems}</span>
             </div>
         </nav>
     )
