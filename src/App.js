@@ -9,13 +9,13 @@ export default function App() {
   return (
     <ContextProvider>
       <BrowserRouter>
-        <Navbar cartItems={0} />
+        <Navbar bagItems={0} />
         <Routes>
           <Route exact path="/" element={<ItemListContainer />} />
           <Route exact path="/category/:id" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </ContextProvider>
   );
