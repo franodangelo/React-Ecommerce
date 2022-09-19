@@ -14,13 +14,11 @@ const itemsData = [
         interestFreePayments: 9,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 97,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 355,
-            strungBalance: 31.5
-        }
+        head: 97,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 355,
+        strungBalance: 31.5
     },
     {
         id: 2,
@@ -37,13 +35,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 97,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 305,
-            strungBalance: 33.5
-        }
+        head: 97,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 305,
+        strungBalance: 33.5
     },
     {
         id: 3,
@@ -60,13 +56,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-1/4",
-        specifications: {
-            head: 97,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 330,
-            strungBalance: 32.2
-        }
+        head: 97,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 330,
+        strungBalance: 32.2
     },
     {
         id: 4,
@@ -83,13 +77,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 98,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 321,
-            strungBalance: 33
-        }
+        head: 98,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 321,
+        strungBalance: 33
     },
     {
         id: 5,
@@ -106,13 +98,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 301,
-            strungBalance: 34
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 301,
+        strungBalance: 34
     },
     {
         id: 6,
@@ -129,13 +119,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 102,
-            length: 28,
-            stringPattern: "18x19",
-            strungWeight: 322,
-            strungBalance: 34
-        }
+        head: 102,
+        length: 28,
+        stringPattern: "18x19",
+        strungWeight: 322,
+        strungBalance: 34
     },
     {
         id: 7,
@@ -152,13 +140,11 @@ const itemsData = [
         interestFreePayments: 3,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 98,
-            length: 27,
-            stringPattern: "16x20",
-            strungWeight: 326,
-            strungBalance: 31.6
-        }
+        head: 98,
+        length: 27,
+        stringPattern: "16x20",
+        strungWeight: 326,
+        strungBalance: 31.6
     },
     {
         id: 8,
@@ -175,13 +161,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 309,
-            strungBalance: 32
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 309,
+        strungBalance: 32
     },
     {
         id: 9,
@@ -198,13 +182,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x20",
-            strungWeight: 326,
-            strungBalance: 31.6
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x20",
+        strungWeight: 326,
+        strungBalance: 31.6
     },
     {
         id: 10,
@@ -221,13 +203,11 @@ const itemsData = [
         interestFreePayments: 9,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 316,
-            strungBalance: 33
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 316,
+        strungBalance: 33
     },
     {
         id: 11,
@@ -244,13 +224,11 @@ const itemsData = [
         interestFreePayments: 3,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 296,
-            strungBalance: 33
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 296,
+        strungBalance: 33
     },
     {
         id: 12,
@@ -267,13 +245,11 @@ const itemsData = [
         interestFreePayments: 6,
         freeShipping: true,
         size: "4-3/8",
-        specifications: {
-            head: 100,
-            length: 27,
-            stringPattern: "16x19",
-            strungWeight: 316,
-            strungBalance: 33
-        }
+        head: 100,
+        length: 27,
+        stringPattern: "16x19",
+        strungWeight: 316,
+        strungBalance: 33
     }
 ]
 
