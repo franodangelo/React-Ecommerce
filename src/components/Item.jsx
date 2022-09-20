@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Item(props) {
     return (
-        <div className="flex flex-col lg:flex-row bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
+        <div className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
 
             <img className="w-full lg:w-1/3 object-cover"
                 src={props.thumbnailCard}

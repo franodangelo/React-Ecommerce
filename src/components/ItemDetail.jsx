@@ -111,7 +111,7 @@ export default function ItemDetail({ item }) {
                     </div>
                 </div>
                 {/* Specifications section */}
-                <section className="lg:w-4/5 mx-auto flex flex-col flex-wrap gap-4">
+                <section className="w-full lg:w-4/5 mx-auto flex flex-col flex-wrap gap-4">
                     <h1 className="py-2 font-bold text-xl text-stone-900 uppercase">Specifications</h1>
                     <div className="flex flex-col gap-2 divide-y-2 divide-stone-200">
                         <h2 className="text-lg">Head: {item.head} sq in</h2>

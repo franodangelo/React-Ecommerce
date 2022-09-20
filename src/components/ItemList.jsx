@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import itemsData from "./utils/itemsData";
-import promise from "./utils/promise";
+import itemsData from "../utils/itemsData";
+import promise from "../utils/promise";
 import Item from "./Item";
 
 export default function ItemList() {
@@ -23,7 +23,7 @@ export default function ItemList() {
     }, [id])
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-auto gap-8">
+        <div className="h-auto min-h-screen m-auto mb-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {items.length > 0 ? items.map(i => {
                 return <Item
                     key={i.id}
