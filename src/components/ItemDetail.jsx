@@ -89,7 +89,7 @@ export default function ItemDetail({ item }) {
                                 </p>
                                 {item.discountPercentage != null ? // if item has disc, render the discPercentage
                                     <p className="text-stone-600">-{item.discountPercentage}% OFF</p> :
-                                    null
+                                    null 
                                 }
                             </div>
                             <p>
