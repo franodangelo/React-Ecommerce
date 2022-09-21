@@ -44,7 +44,7 @@ export default function ItemCount({ stock, initial, cartItems, onAdd }) {
                     <p className="w-full text-xs text-center uppercase">Stock: {stock} rackets</p>
                 </div>
                 <button className="flex w-full basis-3/4 justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700"
-                    onClick={() => { onAdd(stock, count) }}>Add to bag
+                    onClick={() => onAdd(stock, count)}>Add to bag
                 </button>
             </section>
         </div>

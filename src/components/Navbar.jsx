@@ -35,7 +35,7 @@ export default function Navbar({ bagItems }) {
                 </ul>
             </section>
             <div className="flex items-center">
-                <BagWidget />
+                <Link to="/bag"><BagWidget /></Link>
                 <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">{bagItems}</span>
             </div>
         </nav>

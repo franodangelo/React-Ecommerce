@@ -12,10 +12,10 @@ export default function ItemList() {
         try {
             if (id) {
                 promise(itemsData.filter(i => i.category === parseInt(id)), 500)
-                .then(res => setItems(res))
+                    .then(res => setItems(res))
             } else {
                 promise(itemsData, 500)
-                .then(res => setItems(res));
+                    .then(res => setItems(res));
             }
         } catch (error) {
             console.log(error);

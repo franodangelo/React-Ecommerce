@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { BagContext } from "./BagContext";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ item }) {
-    const [itemCount, setItemCount] = useState(1);
+    const [itemCount, setItemCount] = useState(0);
     const [itemStock, setItemStock] = useState(1);
     const [added, setAdded] = useState(false);
+    const context = useContext(BagContext);
 
     useEffect(() => {
         setItemCount(1);
@@ -13,9 +15,11 @@ export default function ItemDetail({ item }) {
     }, [item])
 
     function onAdd(stock, count) {
-        alert()
+        alert("You added " + count + " items to your bag!")
+        setItemCount(count);
         setItemStock(stock - count);
         setAdded(true);
+        context.addItem(item, count);
     }
 
     return (
@@ -89,7 +93,7 @@ export default function ItemDetail({ item }) {
                                 </p>
                                 {item.discountPercentage != null ? // if item has disc, render the discPercentage
                                     <p className="text-stone-600">-{item.discountPercentage}% OFF</p> :
-                                    null 
+                                    null
                                 }
                             </div>
                             <p>
@@ -101,7 +105,7 @@ export default function ItemDetail({ item }) {
                         {/* Buttons section */}
                         {added === false ?
                             (<ItemCount stock={itemStock} initial={itemCount} onAdd={onAdd} />) :
-                            (<Link to="/cart">
+                            (<Link to="/bag">
                                 <button className="flex w-full justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700">
                                     Go to bag
                                 </button>
