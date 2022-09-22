@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { BagContext } from "./BagContext";
+import { BagContext } from "./Bag/BagContext";
 import ItemCount from "./ItemCount";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ItemDetail({ item }) {
     const [itemCount, setItemCount] = useState(0);
@@ -9,22 +11,32 @@ export default function ItemDetail({ item }) {
     const [added, setAdded] = useState(false);
     const context = useContext(BagContext);
 
+    const notify = () => toast.info(`Your bag is charged!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+
     useEffect(() => {
         setItemCount(1);
         setItemStock(item.stock);
     }, [item])
 
     function onAdd(stock, count) {
-        alert("You added " + count + " items to your bag!")
         setItemCount(count);
         setItemStock(stock - count);
         setAdded(true);
         context.addItem(item, count);
+        notify();
     }
 
     return (
         <section className="overflow-hidden h-auto">
-            <div className="flex flex-col container px-4 py-4 mx-auto gap-8">
+            <div className="flex flex-col container p-4 mx-auto gap-8">
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <img className="lg:w-1/2 w-full object-cover object-center rounded border border-stone-200"
                         src={item.thumbnailDetail}
@@ -126,6 +138,17 @@ export default function ItemDetail({ item }) {
                     </div>
                 </section>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </section>
     )
 }

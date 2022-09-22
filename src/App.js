@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Bag from "./components/Bag";
+import Bag from "./components/Bag/Bag";
 import Footer from "./components/Footer";
-import BagContextProvider from "./components/BagContext";
+import BagContextProvider from "./components/Bag/BagContext";
 
 export default function App() {
   return (

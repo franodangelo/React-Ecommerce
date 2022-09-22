@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import BagWidget from "./BagWidget";
+import { BagContext } from "./Bag/BagContext";
+import BagWidget from "./Bag/BagWidget";
 
-export default function Navbar({ bagItems }) {
+export default function Navbar() {
+
+    const context = useContext(BagContext);
+
     return (
         <nav className="flex w-full h-20 mb-10 px-8 justify-between items-center shadow-lg">
             <Link to="/">
@@ -36,7 +40,7 @@ export default function Navbar({ bagItems }) {
             </section>
             <div className="flex items-center">
                 <Link to="/bag"><BagWidget /></Link>
-                <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">{bagItems}</span>
+                <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">{context.bagList.length}</span>
             </div>
         </nav>
     )
