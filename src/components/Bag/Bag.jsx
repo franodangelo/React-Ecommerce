@@ -7,6 +7,8 @@ import Item from "../Item";
 import BagItem from "./BagItem";
 
 export default function Bag() {
+    const context = useContext(BagContext);
+
     const [items, setItems] = useState([]);
     const { id } = useParams();
 
@@ -19,10 +21,9 @@ export default function Bag() {
         }
     }, [id])
 
-    const context = useContext(BagContext);
 
     return (
-        <main className="flex h-auto min-h-screen m-auto mb-auto gap-8">
+        <main className="flex flex-col h-auto min-h-screen m-auto mb-auto px-8 gap-8">
             {
                 context.bagList.length === 0
                     ?
@@ -44,21 +45,25 @@ export default function Bag() {
                             }) : <p>Loading items...</p>}
                         </div>
                     </div>
-                    : null
-            }
-            {
-                context.bagList.map(i =>
-                    <BagItem
-                        key={i.id}
-                        id={i.id}
-                        thumbnailCard={i.thumbnailCard}
-                        name={i.name}
-                        price={i.price}
-                    />
-                )
-            }
-            {
-                context.bagList.length > 0 ? <button onClick={context.clearBag}>Clear bag</button> : null
+                    : <div className="flex flex-col gap-8">
+                        <button className="secondaryBtn self-end" onClick={context.clearBag}>Clear bag</button>
+                        {
+                            context.bagList.map(i =>
+                                <BagItem
+                                    key={i.id}
+                                    id={i.id}
+                                    thumbnailCard={i.thumbnailCard}
+                                    name={i.name}
+                                    price={i.price}
+                                    quantity={i.quantity}
+                                />
+                            )
+                        }
+                        <section className="flex w-fit self-end items-center gap-4">
+                            <h1 className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</h1>
+                            <button className="primaryBtn">Checkout</button>
+                        </section>
+                    </div>
             }
         </main>
     )
