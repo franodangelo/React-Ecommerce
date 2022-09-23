@@ -15,7 +15,7 @@ export default function ItemDetailContainer() {
 
     return (
         <div>
-            <ItemDetail item={data} />
+            {data.name ? <ItemDetail item={data} /> : <p>Loading...</p>}
         </div>
     )
 }

@@ -6,12 +6,12 @@ import Item from "./Item";
 
 export default function ItemList() {
     const [items, setItems] = useState([]);
-    const { id } = useParams();
+    const { category } = useParams();
 
     useEffect(() => {
         try {
-            if (id) {
-                promise(itemsData.filter(i => i.category === parseInt(id)), 500)
+            if (category) {
+                promise(itemsData.filter(i => i.category === category), 500)
                     .then(res => setItems(res))
             } else {
                 promise(itemsData, 500)
@@ -20,7 +20,7 @@ export default function ItemList() {
         } catch (error) {
             console.log(error);
         }
-    }, [id])
+    }, [category])
 
     return (
         <div className="h-auto min-h-screen m-auto mb-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

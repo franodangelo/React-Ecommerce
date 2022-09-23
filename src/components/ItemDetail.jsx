@@ -6,10 +6,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ItemDetail({ item }) {
+
+    const context = useContext(BagContext);
     const [itemCount, setItemCount] = useState(0);
     const [itemStock, setItemStock] = useState(1);
     const [added, setAdded] = useState(false);
-    const context = useContext(BagContext);
 
     const notify = () => toast.info(`Your bag is charged!`, {
         position: "top-right",
@@ -22,7 +23,7 @@ export default function ItemDetail({ item }) {
     });
 
     useEffect(() => {
-        setItemCount(1);
+        setItemCount(item.quantity);
         setItemStock(item.stock);
     }, [item])
 
@@ -32,6 +33,12 @@ export default function ItemDetail({ item }) {
         setAdded(true);
         context.addItem(item, count);
         notify();
+    }
+
+    function onAdd(stock, count) {
+        setItemStock(stock - count);
+        setAdded(true);
+        context.addItem(item, count);
     }
 
     return (
