@@ -5,12 +5,19 @@ export default function BagItem(props) {
     const context = useContext(BagContext);
 
     return (
-        <main className="flex w-full max-h-40 rounded bg-rose-400 justify-between items-center">
+        <main className="flex w-full max-h-40 justify-between items-center rounded shadow">
             <img className="w-80" src={props.thumbnailCard} alt="" />
-            <h1>{props.name}</h1>
-            <h1>{props.price}</h1>
-            <h1>{props.count}</h1>
-            <button onClick={context.removeItem}>Remove from bag</button>
+            <section className="flex justify-start">
+                <div className="flex gap-4">
+                    <h2 className="">{props.quantity}x</h2>
+                    <h1 className="font-bold">{props.name}</h1>
+                </div>
+                <h1>Total price: ${(props.price * props.quantity).toFixed(2)}</h1>
+            </section>
+            <button className="secondaryBtn mr-4"
+                onClick={() => { context.removeItem(props.id) }}>
+                Remove from bag
+            </button>
         </main>
     )
 }
