@@ -13,7 +13,7 @@ export default function App() {
       <Navbar bagItems={0} />
       <Routes>
         <Route exact path="/" element={<ItemListContainer />} />
-        <Route exact path="/category/:id" element={<ItemListContainer />} />
+        <Route exact path="/:category" element={<ItemListContainer />} />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route path='/bag' element={<Bag />} />
       </Routes>
