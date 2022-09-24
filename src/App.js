@@ -9,16 +9,16 @@ import BagContextProvider from "./components/Bag/BagContext";
 export default function App() {
   return (
     <BagContextProvider>
-    <BrowserRouter>
-      <Navbar bagItems={0} />
-      <Routes>
-        <Route exact path="/" element={<ItemListContainer />} />
-        <Route exact path="/:category" element={<ItemListContainer />} />
-        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path='/bag' element={<Bag />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/:category" element={<ItemListContainer />} />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path='/bag' element={<Bag />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </BagContextProvider>
   );
 }
