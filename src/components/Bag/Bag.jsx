@@ -46,6 +46,7 @@ export default function Bag() {
                         </div>
                     </div>
                     : <div className="flex flex-col gap-8">
+                        <h1 className="py-2 font-bold text-3xl uppercase text-stone-900 border-b-2">Shopping bag</h1>
                         <button className="secondaryBtn self-end" onClick={context.clearBag}>Clear bag</button>
                         {
                             context.bagList.map(i =>
