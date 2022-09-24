@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { BagContext } from "./Bag/BagContext";
+import { BagContext } from "../Bag/BagContext";
 import ItemCount from "./ItemCount";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

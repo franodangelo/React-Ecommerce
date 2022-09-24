@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import itemsData from "../../utils/itemsData";
 import promise from "../../utils/promise";
 import { BagContext } from "./BagContext";
-import Item from "../Item";
+import Item from "../Catalog/Item";
 import BagItem from "./BagItem";
 
 export default function Bag() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import itemsData from "../utils/itemsData";
-import promise from "../utils/promise";
+import itemsData from "../../utils/itemsData";
+import promise from "../../utils/promise";
 import Item from "./Item";
 
 export default function ItemList() {
