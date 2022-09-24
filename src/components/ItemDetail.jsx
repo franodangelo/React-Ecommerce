@@ -35,12 +35,6 @@ export default function ItemDetail({ item }) {
         notify();
     }
 
-    function onAdd(stock, count) {
-        setItemStock(stock - count);
-        setAdded(true);
-        context.addItem(item, count);
-    }
-
     return (
         <section className="overflow-hidden h-auto">
             <div className="flex flex-col container p-4 mx-auto gap-8">
