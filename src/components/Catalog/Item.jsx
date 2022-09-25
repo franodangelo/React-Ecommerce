@@ -25,7 +25,7 @@ export default function Item(props) {
                         {props.discountPercentage ? <p className="font-bold text-sm line-through">${props.price.toFixed(2)}</p> : null}
                         <h1 className="font-bold text-2xl lg:text-xl text-rose-700">${props.discountPercentage != null ? ((100 - props.discountPercentage) * props.price / 100) : props.price.toFixed(2)}</h1>
                     </div>
-                    <Link to={`/item/${props.id}`}>
+                    <Link to={`/${props.category}/${props.id}`}>
                         <button className="px-3 py-2 bg-rose-700 text-white text-sm lg:text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300">
                             More details
                         </button>
