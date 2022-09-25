@@ -12,15 +12,20 @@ export default function ItemDetail({ item }) {
     const [itemStock, setItemStock] = useState(1);
     const [added, setAdded] = useState(false);
 
-    const notify = () => toast.info(`Your bag is charged!`, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-    });
+    function notify() {
+        toast.info(
+            `Your bag is charged!`,
+            {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            }
+        )
+    }
 
     useEffect(() => {
         setItemCount(item.quantity);
