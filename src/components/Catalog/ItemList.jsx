@@ -28,6 +28,7 @@ export default function ItemList() {
                 return <Item
                     key={i.id}
                     id={i.id}
+                    category={i.category}
                     thumbnailCard={i.thumbnailCard}
                     name={i.name}
                     rate={i.rate}
