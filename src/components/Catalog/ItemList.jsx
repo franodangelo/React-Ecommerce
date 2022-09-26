@@ -7,22 +7,12 @@ export default function ItemList() {
     const [items, setItems] = useState([]);
     const { category } = useParams();
 
-    // useEffect(() => {
-    //     try {
-    //         if (category) {
-    //             promise(itemsData.filter(i => i.category === category), 500)
-    //                 .then(res => setItems(res))
-    //         } else {
-    //             promise(itemsData, 500)
-    //                 .then(res => setItems(res));
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }, [category])
-
     useEffect(() => {
-        fbFetch().then(res => setItems(res));
+        if (category) {
+            fbFetch(category).then(res => setItems(res));
+        } else {
+            fbFetch().then(res => setItems(res));
+        }
     }, [category])
 
     return (
