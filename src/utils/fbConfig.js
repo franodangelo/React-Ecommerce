@@ -19,12 +19,9 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 export async function fbFetch(category) {
-    let q = query(collection(db, "item"));
+    let q;
     if (category) {
-        q = query(
-            collection(db, "item"),
-            where("category", "==", category)
-        );
+        q = query(collection(db, "item"), where("category", "==", category))
     } else {
         q = query(collection(db, "item"));
     }
@@ -49,4 +46,4 @@ export async function fbFetchSingularDoc(id) {
     } else {
         console.log("No such document!");
     }
-};
+}
