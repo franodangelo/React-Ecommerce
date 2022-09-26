@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import itemsData from "../../utils/itemsData";
 import promise from "../../utils/promise";
 import { BagContext } from "./BagContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Item from "../Catalog/Item";
 import BagItem from "./BagItem";
 
 export default function Bag() {
     const context = useContext(BagContext);
-
     const [items, setItems] = useState([]);
     const { id } = useParams();
 
@@ -20,7 +21,6 @@ export default function Bag() {
             console.log(error);
         }
     }, [id])
-
 
     return (
         <main className="flex flex-col h-auto min-h-screen m-auto mb-auto px-8 gap-8">
@@ -66,6 +66,17 @@ export default function Bag() {
                         </section>
                     </div>
             }
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </main>
     )
 }

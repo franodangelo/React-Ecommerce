@@ -6,15 +6,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ItemDetail({ item }) {
-
     const context = useContext(BagContext);
     const [itemCount, setItemCount] = useState(0);
-    const [itemStock, setItemStock] = useState(1);
+    const [itemStock, setItemStock] = useState(1); 
     const [added, setAdded] = useState(false);
 
     function notify() {
         toast.info(
-            `Your bag is charged!`,
+            `Your bag was charged!`,
             {
                 position: "top-right",
                 autoClose: 3000,

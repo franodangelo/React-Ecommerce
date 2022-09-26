@@ -1,8 +1,8 @@
 import React, { useState, createContext } from "react";
+import { toast } from "react-toastify";
 export const BagContext = createContext();
 
 export default function BagContextProvider({ children }) {
-
     const [bagList, setBagList] = useState([]);
 
     function isOnCart(id) {
@@ -10,7 +10,7 @@ export default function BagContextProvider({ children }) {
         return itemOnCart ? true : false;
     }
 
-    const addItem = (item, qty) => {
+    function addItem(item, qty) {
         if (isOnCart(item.id)) {
             setBagList((prevState) => {
                 return prevState.map(i => {
@@ -41,13 +41,45 @@ export default function BagContextProvider({ children }) {
         }
     }
 
+    function itemRemoved() {
+        toast.info(
+            `The item was removed from your bag.`,
+            {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            }
+        )
+    }
+
+    function bagCleared() {
+        toast.success(
+            `The bag was cleared!`,
+            {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            }
+        )
+    }
+
     function removeItem(id) {
         let listWithoutItem = bagList.filter(i => i.id !== id);
         setBagList(listWithoutItem);
+        itemRemoved();
     }
 
     function clearBag() {
         setBagList([]);
+        bagCleared();
     }
 
     function priceBag() {
