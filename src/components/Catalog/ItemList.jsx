@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { db, fbFetch } from "../../utils/fbConfig.js";
+import { fbFetch } from "../../utils/fbConfig.js";
 import Item from "./Item";
 
 export default function ItemList() {
