@@ -27,7 +27,7 @@ export default function Bag() {
             {
                 context.bagList.length === 0
                     ?
-                    <div className="flex flex-col w-full items-center">
+                    <section className="flex flex-col w-full items-center">
                         <h1 className="py-2 font-bold text-3xl uppercase text-stone-900">There are no products in your bag</h1>
                         <h2 className="py-2 text-stone-500 tracking-widest">Why don't you navigate and add some rackets?</h2>
                         <p className="py-2">We suggest you:</p>
@@ -44,7 +44,7 @@ export default function Bag() {
                                 />
                             }) : <p>Loading items...</p>}
                         </div>
-                    </div>
+                    </section>
                     : <div className="flex flex-col gap-8">
                         <h1 className="py-2 font-bold text-3xl uppercase text-stone-900 border-b-2">Shopping bag</h1>
                         <button className="secondaryBtn self-end" onClick={context.clearBag}>Clear bag</button>
@@ -61,7 +61,7 @@ export default function Bag() {
                             )
                         }
                         <section className="flex w-fit self-end items-center gap-4">
-                            <h1 className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</h1>
+                            <p className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</p>
                             <button className="primaryBtn">Checkout</button>
                         </section>
                     </div>

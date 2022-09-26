@@ -10,30 +10,22 @@ export default function Footer() {
                 </Link>
                 <ul className="flex justify-between gap-4">
                     <Link to="/category/1">
-                        <li className="font-bold text-xs uppercase cursor-pointer">
-                            Pro Staff
-                        </li>
+                        <li className="font-bold text-xs uppercase cursor-pointer">Pro Staff</li>
                     </Link>
                     <Link to="/category/2">
-                        <li className="font-bold text-xs uppercase cursor-pointer">
-                            Blade
-                        </li>
+                        <li className="font-bold text-xs uppercase cursor-pointer">Blade</li>
                     </Link>
                     <Link to="/category/3">
-                        <li className="font-bold text-xs uppercase cursor-pointer">
-                            Clash
-                        </li>
+                        <li className="font-bold text-xs uppercase cursor-pointer">Clash</li>
                     </Link>
                     <Link to="/category/4">
-                        <li className="font-bold text-xs uppercase cursor-pointer">
-                            Ultra
-                        </li>
+                        <li className="font-bold text-xs uppercase cursor-pointer">Ultra</li>
                     </Link>
                 </ul>
             </section>
             <section className="flex flex-row md:flex-col items-center gap-4 md:gap-0 md:items-start">
-                <h1 className="text-white">All rights reserved</h1>
-                <p className="font-bold text-xs md:text-sm text-white">Franco D'Angelo - 2022</p>
+                <h2 className="text-white">All rights reserved</h2>
+                <h3 className="font-bold text-xs md:text-sm text-white">Franco D'Angelo - 2022</h3>
             </section>
         </footer>
     )

@@ -23,7 +23,7 @@ export default function ItemList() {
     }, [category])
 
     return (
-        <div className="h-auto min-h-screen m-auto mb-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <main className="h-auto min-h-screen m-auto mb-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {items.length > 0 ? items.map(i => {
                 return <Item
                     key={i.id}
@@ -36,6 +36,6 @@ export default function ItemList() {
                     discountPercentage={i.discountPercentage}
                 />
             }) : <p>Loading items...</p>}
-        </div>
+        </main>
     )
 }

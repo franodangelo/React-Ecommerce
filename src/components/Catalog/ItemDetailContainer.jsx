@@ -14,8 +14,8 @@ export default function ItemDetailContainer() {
     }, [id])
 
     return (
-        <div>
+        <>
             {data.name ? <ItemDetail item={data} /> : <p>Loading...</p>}
-        </div>
+        </>
     )
 }

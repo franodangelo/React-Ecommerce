@@ -104,12 +104,12 @@ export default function ItemDetail({ item }) {
                                 }
                                 <p className="font-bold text-2xl text-rose-700">
                                     ${item.discountPercentage != null ? // if item has disc, render the new price applying it. If not, render the original price
-                                        ((100 - item.discountPercentage) * item.price / 100) :
-                                        (item.price)
+                                        ((100 - item.discountPercentage) * (item.price.toFixed(2)) / 100) :
+                                        (item.price.toFixed(2))
                                     }
                                 </p>
                                 {item.discountPercentage != null ? // if item has disc, render the discPercentage
-                                    <p className="text-stone-600">-{item.discountPercentage}% OFF</p> :
+                                    <p className="text-stone-600">-{item.discountPercentage}% OFF!</p> :
                                     null
                                 }
                             </div>
@@ -123,7 +123,7 @@ export default function ItemDetail({ item }) {
                         {added === false ?
                             (<ItemCount stock={itemStock} initial={itemCount} onAdd={onAdd} />) :
                             (<Link to="/bag">
-                                <button className="flex w-full justify-center text-center items-center px-4 py-2 font-bold uppercase text-rose-100 rounded bg-rose-700">
+                                <button className="primaryBtn w-full">
                                     Go to bag
                                 </button>
                             </Link>
@@ -133,14 +133,14 @@ export default function ItemDetail({ item }) {
                 </div>
                 {/* Specifications section */}
                 <section className="w-full lg:w-4/5 mx-auto flex flex-col flex-wrap gap-4">
-                    <h1 className="py-2 font-bold text-xl text-stone-900 uppercase">Specifications</h1>
-                    <div className="flex flex-col gap-2 divide-y-2 divide-stone-200">
-                        <h2 className="text-lg">Head: {item.head} sq in</h2>
-                        <h2 className="text-lg">Length: {item.length} in</h2>
-                        <h2 className="text-lg">String pattern: {item.stringPattern}</h2>
-                        <h2 className="text-lg">Strung weight: {item.strungWeight}g</h2>
-                        <h2 className="text-lg">Strung balance: {item.strungBalance}cm</h2>
-                    </div>
+                    <h1 className="py-2 font-bold text-lg md:text-xl text-stone-900 uppercase">Specifications</h1>
+                    <ul className="flex flex-col gap-2 divide-y-2 divide-stone-200">
+                        <li className="md:text-lg">Head: {item.head} sq in</li>
+                        <li className="md:text-lg">Length: {item.length} in</li>
+                        <li className="md:text-lg">String pattern: {item.stringPattern}</li>
+                        <li className="md:text-lg">Strung weight: {item.strungWeight}g</li>
+                        <li className="md:text-lg">Strung balance: {item.strungBalance}cm</li>
+                    </ul>
                 </section>
             </div>
             <ToastContainer

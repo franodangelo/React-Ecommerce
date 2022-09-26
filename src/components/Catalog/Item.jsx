@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Item(props) {
     return (
-        <div className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
-            <img className="w-full lg:w-1/3 object-cover"
-                src={props.thumbnailCard}
-                alt="item thumbnail">
-            </img>
+        <main className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
+            <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt="item thumbnail" />
             <div className="w-full lg:w-2/3 p-4">
                 <h1 className="text-stone-900 font-bold text-xl lg:text-lg">{props.name}</h1>
                 <div className="flex item-center mt-2 gap-1">
@@ -22,8 +19,18 @@ export default function Item(props) {
                 </div>
                 <section className="flex items-center justify-between mt-3">
                     <div className="flex items-center gap-2">
-                        {props.discountPercentage ? <p className="font-bold text-sm line-through">${props.price.toFixed(2)}</p> : null}
-                        <h1 className="font-bold text-2xl lg:text-xl text-rose-700">${props.discountPercentage != null ? ((100 - props.discountPercentage) * props.price / 100) : props.price.toFixed(2)}</h1>
+                        {
+                            props.discountPercentage ?
+                                <h2 className="font-bold text-sm line-through">${props.price.toFixed(2)}</h2> :
+                                null
+                        }
+                        <h2 className="font-bold text-2xl lg:text-xl text-rose-700">
+                            ${
+                                props.discountPercentage != null ?
+                                    ((100 - props.discountPercentage) * props.price / 100) :
+                                    props.price.toFixed(2)
+                            }
+                        </h2>
                     </div>
                     <Link to={`/${props.category}/${props.id}`}>
                         <button className="px-3 py-2 bg-rose-700 text-white text-sm lg:text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300">
@@ -32,6 +39,6 @@ export default function Item(props) {
                     </Link>
                 </section>
             </div>
-        </div>
+        </main>
     )
 }

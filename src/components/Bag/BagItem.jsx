@@ -13,11 +13,10 @@ export default function BagItem(props) {
                         <span className="text-sm">{props.quantity}x</span>
                         <h1 className="font-bold text-xl">{props.name}</h1>
                     </div>
-                    <h1>Total price: <strong className="text-rose-700">${(props.price * props.quantity).toFixed(2)}</strong></h1>
+                    <p>Total: <strong className="text-rose-700">${(props.price * props.quantity).toFixed(2)}</strong></p>
                 </section>
             </div>
-            <button className="secondaryBtn mr-4"
-                onClick={() => { context.removeItem(props.id) }}>
+            <button className="secondaryBtn mr-4" onClick={() => { context.removeItem(props.id) }}>
                 Remove from bag
             </button>
         </main>
