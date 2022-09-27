@@ -56,21 +56,6 @@ export default function BagContextProvider({ children }) {
         )
     }
 
-    function bagCleared() {
-        toast.success(
-            `The bag was cleared!`,
-            {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            }
-        )
-    }
-
     function removeItem(id) {
         let listWithoutItem = bagList.filter(i => i.id !== id);
         setBagList(listWithoutItem);
@@ -79,7 +64,6 @@ export default function BagContextProvider({ children }) {
 
     function clearBag() {
         setBagList([]);
-        bagCleared();
     }
 
     function priceBag() {
