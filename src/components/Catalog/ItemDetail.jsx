@@ -11,7 +11,7 @@ export default function ItemDetail({ item }) {
     const [itemStock, setItemStock] = useState(1); 
     const [added, setAdded] = useState(false);
 
-    function notify() {
+    function bagCharged() {
         toast.info(
             `Your bag was charged!`,
             {
@@ -36,7 +36,7 @@ export default function ItemDetail({ item }) {
         setItemStock(stock - count);
         setAdded(true);
         context.addItem(item, count);
-        notify();
+        bagCharged();
     }
 
     return (
