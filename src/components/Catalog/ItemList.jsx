@@ -15,9 +15,20 @@ export default function ItemList() {
         }
     }, [category])
 
+    const orderedItems = items.sort(function (a, b) {
+        if (a.stock > b.stock) {
+            return -1;
+        }
+        if (a.stock < b.stock) {
+            return 1;
+        }
+        // a must be equal to b
+        return 0;
+    });
+
     return (
         <main className="h-auto min-h-screen m-auto mb-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {items.length > 0 ? items.map(i => {
+            {items.length > 0 ? orderedItems.map(i => {
                 return <Item
                     key={i.id}
                     id={i.id}
