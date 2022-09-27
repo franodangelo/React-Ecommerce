@@ -45,7 +45,7 @@ export default function ItemDetail({ item }) {
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <img className="lg:w-1/2 w-full object-cover object-center rounded border border-stone-200"
                         src={item.thumbnailDetail}
-                        alt="product"
+                        alt={`${item.name} thumbnail`}
                     />
                     <div className="lg:w-1/2 w-full lg:pl-8 lg:py-2 mt-6 lg:mt-0">
                         <h2 className="text-sm text-stone-500 tracking-widest">

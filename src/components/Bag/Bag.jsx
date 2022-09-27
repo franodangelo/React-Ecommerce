@@ -74,8 +74,8 @@ export default function Bag() {
                 context.bagList.length === 0
                     ?
                     <section className="flex flex-col w-full items-center">
-                        <h1 className="py-2 font-bold text-3xl uppercase text-stone-900">There are no products in your bag</h1>
-                        <h2 className="py-2 text-stone-500 tracking-widest">Why don't you navigate and add some rackets?</h2>
+                        <h1 className="py-2 font-bold text-3xl text-center md:text-start uppercase text-stone-900">There are no products in your bag</h1>
+                        <h2 className="py-2 text-center md:text-start text-stone-500 tracking-widest">Why don't you navigate and add some rackets?</h2>
                         <p className="py-2">We suggest you:</p>
                         <div className="flex flex-col h-auto min-h-screen m-auto mb-auto p-8 gap-8">
                             {items.length > 0 ? items.map(i => {
@@ -93,8 +93,8 @@ export default function Bag() {
                         </div>
                     </section>
                     : <div className="flex flex-col gap-8">
-                        <h1 className="py-2 font-bold text-3xl uppercase text-stone-900 border-b-2">Shopping bag</h1>
-                        <button className="secondaryBtn self-end" onClick={() => {context.clearBag(); bagCleared()}}>Clear bag</button>
+                        <h1 className="py-2 font-bold text-3xl text-center lg:text-left uppercase text-stone-900 border-b-2">Shopping bag</h1>
+                        <button className="secondaryBtn self-center lg:self-end w-[80%] lg:w-auto" onClick={() => {context.clearBag(); bagCleared()}}>Clear bag</button>
                         {
                             context.bagList.map(i =>
                                 <BagItem

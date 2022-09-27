@@ -24,7 +24,7 @@ export default function Item(props) {
                                 <h2 className="font-bold text-sm line-through">${props.price.toFixed(2)}</h2> :
                                 null
                         }
-                        <h2 className="font-bold text-2xl lg:text-xl text-rose-700">
+                        <h2 className="font-bold text-xl lg:text-xl text-rose-700">
                             ${
                                 props.discountPercentage != null ?
                                     ((100 - props.discountPercentage) * props.price / 100) :
