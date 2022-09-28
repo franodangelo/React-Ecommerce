@@ -9,16 +9,16 @@ export default function Footer() {
                     <h1 className="font-bold text-lg text-white uppercase">Advantage.</h1>
                 </Link>
                 <ul className="flex justify-between gap-4">
-                    <Link to="/category/1">
+                    <Link to="/prostaff">
                         <li className="font-bold text-xs uppercase cursor-pointer">Pro Staff</li>
                     </Link>
-                    <Link to="/category/2">
+                    <Link to="/blade">
                         <li className="font-bold text-xs uppercase cursor-pointer">Blade</li>
                     </Link>
-                    <Link to="/category/3">
+                    <Link to="/clash">
                         <li className="font-bold text-xs uppercase cursor-pointer">Clash</li>
                     </Link>
-                    <Link to="/category/4">
+                    <Link to="/ultra">
                         <li className="font-bold text-xs uppercase cursor-pointer">Ultra</li>
                     </Link>
                 </ul>
