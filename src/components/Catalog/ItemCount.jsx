@@ -23,12 +23,12 @@ export default function ItemCount({ stock, initial, onAdd }) {
     return (
         <main className="flex flex-col w-full">
             {
-                stock != 0 ?
+                stock !== 0 ?
                     <div className="flex flex-col md:flex-row justify-between items-start gap-8">
                         <section className="flex w-full md:flex-col basis-1/4 items-center md:items-stretch gap-2">
                             <div className="flex w-full py-2 gap-2">
                                 {
-                                    count != 1 ?
+                                    count !== 1 ?
                                         <HiOutlineMinusSm onClick={subtractUnit} className="text-rose-700 cursor-pointer" size={24} /> :
                                         <HiOutlineMinusSm onClick={subtractUnit} className="text-stone-700 cursor-not-allowed" size={24} />
                                 }

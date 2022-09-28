@@ -5,7 +5,7 @@ export default function Item(props) {
     return (
         <main className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
             {
-            props.stock != 0 ? <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> : <img className="w-full lg:w-1/3 object-cover grayscale" src={props.thumbnailCard} alt={`${props.name} thumbnail`} />
+            props.stock !== 0 ? <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> : <img className="w-full lg:w-1/3 object-cover grayscale" src={props.thumbnailCard} alt={`${props.name} thumbnail`} />
             }
             <div className="w-full lg:w-2/3 p-4">
                 <h1 className="text-stone-900 font-bold text-xl lg:text-lg">{props.name}</h1>
@@ -35,7 +35,7 @@ export default function Item(props) {
                         </h2>
                     </div>
                     {
-                        props.stock != 0 ?
+                        props.stock !== 0 ?
                             <Link to={`/${props.category}/${props.id}`}>
                                 <button className="primaryBtn">
                                     More details

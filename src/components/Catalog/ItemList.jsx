@@ -25,7 +25,7 @@ export default function ItemList() {
         <>
             {items.length > 0 ?
                 <main className="grid grid-cols-1 h-auto min-h-screen m-auto mb-auto gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {items.map(i => {
+                    {sortedItems.map(i => {
                         return <Item
                             key={i.id}
                             id={i.id}
