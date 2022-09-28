@@ -47,15 +47,16 @@ export default function Bag() {
         }
 
         createFbOrder()
-            .then(res => alert(`Thanks for your purchase! Order #${res.id}`))
-            .catch(err => console.log(err));
-
-        context.bagList.forEach(async(item) => {
-            const itemRef = doc(db, "item", item.id)
-            await updateDoc(itemRef, {
-                stock: increment(-item.quantity)
+            .then(res => {
+                alert(`Thanks for your purchase! Order #${res.id}`)
+                context.bagList.forEach(async (item) => {
+                    const itemRef = doc(db, "item", item.id)
+                    await updateDoc(itemRef, {
+                        stock: increment(-item.quantity)
+                    })
+                })
             })
-        })
+            .catch(err => console.log(err));
 
         context.clearBag();
     }
@@ -101,7 +102,7 @@ export default function Bag() {
                     </section>
                     : <div className="flex flex-col gap-8">
                         <h1 className="py-2 font-bold text-3xl text-center lg:text-left uppercase text-stone-900 border-b-2">Shopping bag</h1>
-                        <button className="secondaryBtn self-center lg:self-end w-[80%] lg:w-auto" onClick={() => {context.clearBag(); bagCleared()}}>Clear bag</button>
+                        <button className="secondaryBtn self-center lg:self-end w-[80%] lg:w-auto" onClick={() => { context.clearBag(); bagCleared() }}>Clear bag</button>
                         {
                             context.bagList.map(i =>
                                 <BagItem
