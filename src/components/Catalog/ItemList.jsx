@@ -15,11 +15,11 @@ export default function ItemList() {
         }
     }, [category])
 
-    // const sortedItems = items.sort(function (a, b) {
-    //     if (a.stock > b.stock) return -1;
-    //     if (a.stock < b.stock) return 1;
-    //     return 0;
-    // });
+    const sortedItems = items.sort(function (a, b) {
+        if (a.stock > b.stock) return -1;
+        if (a.stock < b.stock) return 1;
+        return 0;
+    });
 
     return (
         <>
