@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 export default function Item(props) {
     return (
         <main className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
-            <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt="item thumbnail" />
+            {
+            props.stock != 0 ? <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> : <img className="w-full lg:w-1/3 object-cover grayscale" src={props.thumbnailCard} alt={`${props.name} thumbnail`} />
+            }
             <div className="w-full lg:w-2/3 p-4">
                 <h1 className="text-stone-900 font-bold text-xl lg:text-lg">{props.name}</h1>
                 <div className="flex item-center mt-2 gap-1">
@@ -32,11 +34,17 @@ export default function Item(props) {
                             }
                         </h2>
                     </div>
-                    <Link to={`/${props.category}/${props.id}`}>
-                        <button className="px-3 py-2 bg-rose-700 text-white text-sm lg:text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300">
-                            More details
-                        </button>
-                    </Link>
+                    {
+                        props.stock != 0 ?
+                            <Link to={`/${props.category}/${props.id}`}>
+                                <button className="primaryBtn">
+                                    More details
+                                </button>
+                            </Link> :
+                            <button className="noStockBtn">
+                                Out of stock
+                            </button>
+                    }
                 </section>
             </div>
         </main>
