@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="flex flex-col md:flex-row w-full h-[120px] mt-8 px-8 py-4 justify-between items-center bg-rose-700">
             <section className="flex items-center gap-8">
                 <Link to="/">
-                    <h1 className="font-bold text-lg text-white uppercase">Wlsn</h1>
+                    <h1 className="font-bold text-lg text-white uppercase">Advantage.</h1>
                 </Link>
                 <ul className="flex justify-between gap-4">
                     <Link to="/category/1">

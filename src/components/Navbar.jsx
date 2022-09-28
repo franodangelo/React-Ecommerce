@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <nav className="flex w-full h-20 mb-10 px-8 justify-between items-center shadow-lg">
             <Link to="/">
-                <h1 className="font-bold text-lg md:text-2xl text-rose-700 uppercase">Wlsn</h1>
+                <h1 className="font-bold text-lg md:text-2xl text-rose-700 uppercase">Advantage.</h1>
             </Link>
             <ul className="flex justify-between items-center gap-2 md:gap-8">
                 <Link to="/prostaff">
