@@ -15,17 +15,17 @@ export default function ItemList() {
         }
     }, [category])
 
-    const sortedItems = items.sort(function (a, b) {
-        if (a.stock > b.stock) return -1;
-        if (a.stock < b.stock) return 1;
-        return 0;
-    });
+    // const sortedItems = items.sort(function (a, b) {
+    //     if (a.stock > b.stock) return -1;
+    //     if (a.stock < b.stock) return 1;
+    //     return 0;
+    // });
 
     return (
         <>
             {items.length > 0 ?
                 <main className="grid grid-cols-1 h-auto min-h-screen m-auto mb-auto gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {sortedItems.map(i => {
+                    {items.map(i => {
                         return <Item
                             key={i.id}
                             id={i.id}
