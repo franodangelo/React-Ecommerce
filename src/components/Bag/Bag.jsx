@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { collection, doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { db, fbFetch } from "../../utils/fbConfig";
 import { BagContext } from "./BagContext";
 import { toast, ToastContainer } from "react-toastify";
@@ -49,6 +49,13 @@ export default function Bag() {
         createFbOrder()
             .then(res => alert(`Thanks for your purchase! Order #${res.id}`))
             .catch(err => console.log(err));
+
+        context.bagList.forEach(async(item) => {
+            const itemRef = doc(db, "item", item.id)
+            await updateDoc(itemRef, {
+                stock: increment(-item.quantity)
+            })
+        })
 
         context.clearBag();
     }
