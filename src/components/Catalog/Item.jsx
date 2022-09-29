@@ -5,7 +5,7 @@ export default function Item(props) {
     return (
         <main className="flex flex-col lg:flex-row lg:max-h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-300">
             {
-            props.stock !== 0 ? <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> : <img className="w-full lg:w-1/3 object-cover grayscale" src={props.thumbnailCard} alt={`${props.name} thumbnail`} />
+                props.stock !== 0 ? <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> : <img className="w-full lg:w-1/3 object-cover grayscale" src={props.thumbnailCard} alt={`${props.name} thumbnail`} />
             }
             <div className="w-full lg:w-2/3 p-4">
                 <h1 className="text-stone-900 font-bold text-xl lg:text-lg">{props.name}</h1>
@@ -20,33 +20,25 @@ export default function Item(props) {
                     <p className="text-center">{props.rate}</p>
                 </div>
                 <section className="flex items-center justify-between mt-3">
-                    <div className="flex items-center gap-2">
-                        {
-                            props.discountPercentage ?
-                                <h2 className="font-bold text-sm line-through">${props.price.toFixed(2)}</h2> :
-                                null
-                        }
-                        <h2 className="font-bold text-xl lg:text-xl text-rose-700">
-                            ${
-                                props.discountPercentage != null ?
-                                    ((100 - props.discountPercentage) * props.price / 100) :
-                                    props.price.toFixed(2)
-                            }
-                        </h2>
-                    </div>
                     {
                         props.stock !== 0 ?
-                            <Link to={`/${props.category}/${props.id}`}>
-                                <button className="primaryBtn">
-                                    More details
-                                </button>
-                            </Link> :
+                            <div className="flex items-center gap-2">
+                                {props.discountPercentage ? <h2 className="font-bold text-sm line-through">${props.price.toFixed(2)}</h2> : null}
+                                <h2 h2 className="font-bold text-xl lg:text-xl text-rose-700">
+                                    ${props.discountPercentage != null ? ((100 - props.discountPercentage) * props.price / 100) : props.price.toFixed(2)}
+                                </h2>
+                            </div> :
                             <button className="noStockBtn">
                                 Out of stock
                             </button>
                     }
+                    <Link to={`/${props.category}/${props.id}`}>
+                        <button className="primaryBtn">
+                            More details
+                        </button>
+                    </Link>
                 </section>
-            </div>
-        </main>
+            </div >
+        </main >
     )
 }
