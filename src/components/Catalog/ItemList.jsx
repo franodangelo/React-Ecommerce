@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fbFetch } from "../../utils/fbConfig.js";
+import itemsData from "../../utils/itemsData";
+import promise from "../../utils/promise";
 import Item from "./Item";
+
+// import { fbFetch } from "../../utils/fbConfig.js";
 
 export default function ItemList() {
     const [items, setItems] = useState([]);
     const { category } = useParams();
 
+    // useEffect(() => {
+    //     if (category) {
+    //         fbFetch(category).then(res => setItems(res));
+    //     } else {
+    //         fbFetch().then(res => setItems(res));
+    //     }
+    // }, [category])
+
     useEffect(() => {
-        if (category) {
-            fbFetch(category).then(res => setItems(res));
-        } else {
-            fbFetch().then(res => setItems(res));
+        try {
+            if (category) {
+                promise(itemsData.filter(i => i.category === category), 500)
+                    .then(res => setItems(res))
+            } else {
+                promise(itemsData, 500)
+                    .then(res => setItems(res));
+            }
+        } catch (error) {
+            console.log(error);
         }
     }, [category])
 
