@@ -40,10 +40,10 @@ export default function Navbar() {
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <Link to="/">
-                                        <h1 className="block h-8 w-auto lg:hidden font-bold text-lg md:text-2xl text-rose-700 uppercase">Advantage.</h1>
+                                        <h1 className="block h-8 w-auto lg:hidden font-bold text-lg md:text-2xl text-rose-700 hover:text-rose-800 uppercase">Advantage.</h1>
                                     </Link>
                                     <Link to="/">
-                                        <h1 className="hidden h-8 w-auto lg:block font-bold text-lg md:text-2xl text-rose-700 uppercase">Advantage.</h1>
+                                        <h1 className="hidden h-8 w-auto lg:block font-bold text-lg md:text-2xl text-rose-700 hover:text-rose-800 uppercase">Advantage.</h1>
                                     </Link>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
@@ -84,12 +84,12 @@ export default function Navbar() {
 
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pt-2 pb-3">
-                            <ul class="flex items-center space-x-8 text-sm font-medium bg-white">
+                            <ul class="flex flex-col space-y-8 text-sm font-medium bg-white">
                                 <Disclosure.Button key="prostaff"
                                     as="a"
                                     href="/prostaff"
                                 >
-                                    <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                    <li className="font-bold text-sm md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 ease-out duration-300">
                                         Pro Staff
                                     </li>
                                 </Disclosure.Button>
@@ -97,7 +97,7 @@ export default function Navbar() {
                                     as="a"
                                     href="/blade"
                                 >
-                                    <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                    <li className="font-bold text-sm md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 ease-out duration-300">
                                         Blade
                                     </li>
                                 </Disclosure.Button>
@@ -105,7 +105,7 @@ export default function Navbar() {
                                     as="a"
                                     href="/clash"
                                 >
-                                    <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                    <li className="font-bold text-sm md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 ease-out duration-300">
                                         Clash
                                     </li>
                                 </Disclosure.Button>
@@ -113,7 +113,7 @@ export default function Navbar() {
                                     as="a"
                                     href="/ultra"
                                 >
-                                    <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                    <li className="font-bold text-sm md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 ease-out duration-300">
                                         Ultra
                                     </li>
                                 </Disclosure.Button>

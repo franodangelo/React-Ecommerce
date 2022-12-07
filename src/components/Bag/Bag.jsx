@@ -31,32 +31,32 @@ export default function Bag() {
     //         price: item.price,
     //         quantity: item.quantity
     //     }))
-        // let purchaseOrder = {
-        //     buyer: {
-        //         name: "",
-        //         email: "",
-        //         phone: 12345678
-        //     },
-        //     date: serverTimestamp(),
-        //     items: itemsForFb,
-        //     total: context.priceBag()
-        // }
-        // async function createFbOrder() {
-        //     const newOrderRef = doc(collection(db, "orders"));
-        //     await setDoc(newOrderRef, purchaseOrder);
-        //     return newOrderRef;
-        // }
-        // createFbOrder()
-        //     .then(res => {
-        //         alert(`Thanks for your purchase! Order #${res.id}`)
-        //         context.bagList.forEach(async (item) => {
-        //             const itemRef = doc(db, "item", item.id)
-        //             await updateDoc(itemRef, {
-        //                 stock: increment(-item.quantity)
-        //             })
-        //         })
-        //     })
-        //     .catch(err => console.log(err));
+    // let purchaseOrder = {
+    //     buyer: {
+    //         name: "",
+    //         email: "",
+    //         phone: 12345678
+    //     },
+    //     date: serverTimestamp(),
+    //     items: itemsForFb,
+    //     total: context.priceBag()
+    // }
+    // async function createFbOrder() {
+    //     const newOrderRef = doc(collection(db, "orders"));
+    //     await setDoc(newOrderRef, purchaseOrder);
+    //     return newOrderRef;
+    // }
+    // createFbOrder()
+    //     .then(res => {
+    //         alert(`Thanks for your purchase! Order #${res.id}`)
+    //         context.bagList.forEach(async (item) => {
+    //             const itemRef = doc(db, "item", item.id)
+    //             await updateDoc(itemRef, {
+    //                 stock: increment(-item.quantity)
+    //             })
+    //         })
+    //     })
+    //     .catch(err => console.log(err));
     //     context.clearBag();
     // }
 
