@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 body {
     font-family: 'Rubik', sans-serif;
-} */
+}
 
 .primaryBtn {
     @apply p-2 bg-rose-700 text-white text-xs font-bold uppercase rounded hover:bg-rose-50 hover:text-rose-800 ease-out duration-300
