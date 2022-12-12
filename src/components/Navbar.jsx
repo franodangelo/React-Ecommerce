@@ -37,7 +37,7 @@ export default function Navbar() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                            <div className="flex flex-1 justify-center items-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <Link to="/">
                                         <h1 className="block h-8 w-auto lg:hidden font-bold text-lg md:text-2xl text-rose-700 hover:text-rose-800 uppercase">Advantage.</h1>
@@ -47,7 +47,7 @@ export default function Navbar() {
                                     </Link>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
-                                    <ul class="flex items-center space-x-8 text-sm font-medium bg-white">
+                                    <ul class="flex items-center space-x-8 font-medium text-sm bg-white">
                                         <Link to="/prostaff">
                                             <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
                                                 Pro Staff
@@ -71,14 +71,14 @@ export default function Navbar() {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <div className="flex mr-2 items-center">
-                                    <Link to="/bag"><BagWidget /></Link>
-                                    <span className="-ml-4 -mt-6 px-1 text-xs border border-rose-700 rounded">
+                            <Link to="/bag">
+                                <div className="flex items-center">
+                                    <BagWidget />
+                                    <span className="-ml-4 -mt-6 px-1 text-xs rounded border border-rose-700">
                                         {context.quantityBag()}
                                     </span>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
 
