@@ -50,9 +50,9 @@ export default function ItemDetail({ item }) {
                     <div className="lg:w-1/2 w-full lg:pl-8 lg:py-2 mt-6 lg:mt-0">
                         <h2 className="text-sm text-stone-500 tracking-widest">
                             Rackets / {
-                                item.category === 1 ? "Pro Staff" :
-                                    item.category === 2 ? "Blade" :
-                                        item.category === 3 ? "Clash" :
+                                item.category === "prostaff" ? "Pro Staff" :
+                                    item.category === "blade" ? "Blade" :
+                                        item.category === "clash" ? "Clash" :
                                             "Ultra"
                             }
                         </h2>

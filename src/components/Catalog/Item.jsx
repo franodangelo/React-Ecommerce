@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Item(props) {
     return (
-        <main className="flex flex-col lg:flex-row lg:max-h-[200px] bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-500">
+        <main className="flex flex-col lg:flex-row lg:h-40 bg-white shadow-md rounded overflow-hidden hover:scale-105 ease-in-out duration-500">
             {
                 props.stock !== 0 ?
                     <img className="w-full lg:w-1/3 object-cover" src={props.thumbnailCard} alt={`${props.name} thumbnail`} /> :
@@ -11,7 +10,7 @@ export default function Item(props) {
             }
             <div className="flex flex-col w-full lg:w-2/3 p-4">
                 <div className="flex justify-between items-center">
-                    <span className="font-light text-xs uppercase">{props.category}</span>
+                    <span className="font-light text-xs uppercase">{props.category === "prostaff" ? "Pro Staff" : props.category}</span>
                     <div className="flex item-center md:gap-1">
                         {props.rate === 0 ?
                             <svg className="w-4 h-4 self-center fill-current text-stone-400" viewBox="0 0 24 24">
