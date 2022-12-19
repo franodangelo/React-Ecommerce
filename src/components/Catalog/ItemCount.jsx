@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineMinusSm, HiOutlinePlusSm } from "react-icons/hi";
 
 export default function ItemCount({ stock, initial, onAdd }) {
@@ -15,9 +15,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
     }
 
     function subtractUnit() {
-        if (count > initial) {
-            setCount(count - 1);
-        }
+        if (count > initial) setCount(count - 1);
     }
 
     return (
@@ -45,9 +43,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
                             Add to bag
                         </button>
                     </div> :
-                    <button className="noStockBtn w-full basis-3/4">
-                        Out of stock
-                    </button>
+                    <button className="noStockBtn w-full basis-3/4">Out of stock</button>
             }
         </main>
     )
