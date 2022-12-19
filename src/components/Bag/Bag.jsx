@@ -9,9 +9,6 @@ import Item from "../Catalog/Item";
 import BagItem from "./BagItem";
 import Loader from "../Loader";
 
-// import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
-// import { db, fbFetch } from "../../utils/fbConfig";
-
 export default function Bag() {
     const context = useContext(BagContext);
     const [items, setItems] = useState([]);
@@ -24,42 +21,6 @@ export default function Bag() {
             console.log(error);
         }
     }, [id])
-
-    // function createPurchaseOrder() {
-    //     let itemsForFb = context.bagList.map(item => ({
-    //         id: item.id,
-    //         title: item.name,
-    //         price: item.price,
-    //         quantity: item.quantity
-    //     }))
-    // let purchaseOrder = {
-    //     buyer: {
-    //         name: "",
-    //         email: "",
-    //         phone: 12345678
-    //     },
-    //     date: serverTimestamp(),
-    //     items: itemsForFb,
-    //     total: context.priceBag()
-    // }
-    // async function createFbOrder() {
-    //     const newOrderRef = doc(collection(db, "orders"));
-    //     await setDoc(newOrderRef, purchaseOrder);
-    //     return newOrderRef;
-    // }
-    // createFbOrder()
-    //     .then(res => {
-    //         alert(`Thanks for your purchase! Order #${res.id}`)
-    //         context.bagList.forEach(async (item) => {
-    //             const itemRef = doc(db, "item", item.id)
-    //             await updateDoc(itemRef, {
-    //                 stock: increment(-item.quantity)
-    //             })
-    //         })
-    //     })
-    //     .catch(err => console.log(err));
-    //     context.clearBag();
-    // }
 
     function bagCleared() {
         toast.success(
@@ -100,7 +61,7 @@ export default function Bag() {
                                             discountPercentage={i.discountPercentage}
                                         />
                                     }) :
-                                    <Loader/>
+                                    <Loader />
                             }
                         </div>
                     </section>
@@ -121,7 +82,6 @@ export default function Bag() {
                         }
                         <section className="flex w-fit self-end items-center gap-4">
                             <p className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</p>
-                            {/* <button className="primaryBtn" onClick={createPurchaseOrder}>Checkout</button> */}
                             <button className="primaryBtn">Checkout</button>
                         </section>
                     </div>
