@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import itemsData from "../../utils/itemsData";
 import promise from "../../utils/promise";
@@ -38,15 +38,15 @@ export default function Bag() {
     }
 
     return (
-        <main className="flex flex-col h-auto min-h-screen m-auto mb-auto px-8 gap-8">
+        <main className="flex flex-col h-auto min-h-screen m-auto mb-auto px-2 sm:px-6 lg:px-8 gap-8">
             {
                 context.bagList.length === 0
                     ?
-                    <section className="flex flex-col w-full items-center">
-                        <h1 className="py-2 font-bold text-3xl text-center md:text-start uppercase text-stone-900">There are no products in your bag</h1>
-                        <h2 className="py-2 text-center md:text-start text-stone-500 tracking-widest">Why don't you navigate and add some rackets?</h2>
-                        <p className="py-2">We suggest you:</p>
-                        <div className="flex flex-col h-auto min-h-screen m-auto mb-auto p-8 gap-8">
+                    <section className="flex flex-col w-full pt-10 items-center lg:items-start">
+                        <h1 className="pb-2 font-bold text-xl sm:text-2xl md:text-3xl text-center md:text-start uppercase">There are no products in your bag</h1>
+                        <h2 className="text-center md:text-start text-stone-500 tracking-wide">{`Why don't you navigate and add some rackets?`}</h2>
+                        <p className="pt-2">We suggest you:</p>
+                        <div className="grid sm:grid-cols-2 h-auto pt-8 gap-8">
                             {
                                 items.length > 0 ?
                                     items.map(i => {
@@ -65,26 +65,30 @@ export default function Bag() {
                             }
                         </div>
                     </section>
-                    : <div className="flex flex-col gap-8">
-                        <h1 className="py-2 font-bold text-3xl text-center lg:text-left uppercase text-stone-900 border-b-2">Shopping bag</h1>
-                        <button className="secondaryBtn self-center lg:self-end w-[80%] lg:w-auto" onClick={() => { context.clearBag(); bagCleared() }}>Clear bag</button>
-                        {
-                            context.bagList.map(i =>
-                                <BagItem
-                                    key={i.id}
-                                    id={i.id}
-                                    thumbnailCard={i.thumbnailCard}
-                                    name={i.name}
-                                    price={i.price}
-                                    quantity={i.quantity}
-                                />
-                            )
-                        }
-                        <section className="flex w-fit self-end items-center gap-4">
+                    : <section className="flex flex-col w-full pt-10 items-center lg:items-start gap-8">
+                        <div className="flex w-full justify-between items-center">
+                            <h1 className="py-2 font-bold text-xl sm:text-2xl md:text-3xl text-center lg:text-left uppercase text-stone-900">Shopping bag</h1>
+                            <button className="secondaryBtn w-auto" onClick={() => { context.clearBag(); bagCleared() }}>Clear bag</button>
+                        </div>
+                        <div className="flex flex-col w-full gap-4">
+                            {
+                                context.bagList.map(i =>
+                                    <BagItem
+                                        key={i.id}
+                                        id={i.id}
+                                        thumbnailCard={i.thumbnailCard}
+                                        name={i.name}
+                                        price={i.price}
+                                        quantity={i.quantity}
+                                    />
+                                )
+                            }
+                        </div>
+                        <div className="flex self-end items-center gap-4">
                             <p className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</p>
                             <button className="primaryBtn">Checkout</button>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
             }
             <ToastContainer
                 position="bottom-right"
