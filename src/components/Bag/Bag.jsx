@@ -38,7 +38,7 @@ export default function Bag() {
     }
 
     return (
-        <main className="flex flex-col h-auto min-h-screen m-auto mb-auto px-2 sm:px-6 lg:px-8 gap-8">
+        <main className="flex flex-col h-auto min-h-screen px-2 sm:px-6 lg:px-8">
             {
                 context.bagList.length === 0
                     ?
