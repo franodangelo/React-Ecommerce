@@ -5,6 +5,7 @@ import promise from "../../utils/promise";
 import { BagContext } from "./BagContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import Item from "../Catalog/Item";
 import BagItem from "./BagItem";
 import Loader from "../Loader";
@@ -13,6 +14,7 @@ export default function Bag() {
     const context = useContext(BagContext);
     const [items, setItems] = useState([]);
     const { id } = useParams();
+    const randomOrderNumber = Math.floor(Math.random() * 14) * Math.ceil(Math.random() * 21);
 
     useEffect(() => {
         try {
@@ -37,6 +39,20 @@ export default function Bag() {
         )
     }
 
+    function orderGenerated() {
+        Swal.fire({
+            title: "!Ready for the game!",
+            text: `We generated the order #${randomOrderNumber}. Hope you enjoy your new equipment :)`,
+            icon: "success",
+            width: "640px",
+            confirmButtonColor: "#be123c",
+            confirmButtonText: "Thanks!",
+            focusConfirm: false,
+            showCloseButton: true,
+        })
+        context.clearBag();
+    }
+
     return (
         <main className="flex flex-col h-auto min-h-screen px-2 sm:px-6 lg:px-8">
             {
@@ -44,7 +60,7 @@ export default function Bag() {
                     ?
                     <section className="flex flex-col w-full pt-10 items-center lg:items-start">
                         <h1 className="pb-2 font-bold text-xl sm:text-2xl md:text-3xl text-center md:text-start uppercase">There are no products in your bag</h1>
-                        <h2 className="text-center md:text-start text-stone-500 tracking-wide">{`Why don't you navigate and add some rackets?`}</h2>
+                        <h2 className="text-center md:text-start text-stone-500 tracking-wide">{`Why don"t you navigate and add some rackets?`}</h2>
                         <p className="pt-2">We suggest you:</p>
                         <div className="grid sm:grid-cols-2 h-auto pt-8 gap-8">
                             {
@@ -86,7 +102,7 @@ export default function Bag() {
                         </div>
                         <div className="flex self-end items-center gap-4">
                             <p className="font-bold uppercase">Total: ${(context.priceBag()).toFixed(2)}</p>
-                            <button className="primaryBtn">Checkout</button>
+                            <button className="primaryBtn" onClick={orderGenerated}>Checkout</button>
                         </div>
                     </section>
             }
