@@ -1,8 +1,8 @@
-import { Fragment, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BagContext } from "./Bag/BagContext";
 import BagWidget from "./Bag/BagWidget";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 
 const navigation = [
