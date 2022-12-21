@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BagContext } from "./Bag/BagContext";
 import BagWidget from "./Bag/BagWidget";
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 
 const navigation = [
@@ -11,24 +10,24 @@ const navigation = [
     { name: 'Pro Staff', category: 'prostaff', href: '#', current: false },
     { name: 'Blade', category: 'blade', href: '#', current: false },
     { name: 'Clash', category: 'clash', href: '#', current: false },
-    { name: 'Ultra', category: 'ultra', href: '#', current: false },
+    { name: 'Ultra', category: 'ultra', href: '#', current: false }
 ]
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
     const context = useContext(BagContext);
     return (
-        <Disclosure as="nav" className="bg-white px-2 sm:px-4 py-2 w-full z-20 top-0 left-0 shadow-lg">
+        <Disclosure as="nav" className="flex w-full h-20 px-2 sm:px-6 lg:px-8 z-20 top-0 left-0 items-center shadow-lg bg-white">
             {({ open }) => (
                 <>
-                    <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div className="w-full">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-stone-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                <Disclosure.Button className="inline-flex items-center justify-center text-stone-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
                                         <HiX className="block h-6 w-6" aria-hidden="true" />
@@ -46,38 +45,34 @@ export default function Navbar() {
                                         <h1 className="hidden h-8 w-auto lg:block font-bold text-lg md:text-2xl text-rose-700 hover:text-rose-800 uppercase">Advantage.</h1>
                                     </Link>
                                 </div>
-                                <div className="hidden sm:ml-6 sm:block">
-                                    <ul class="flex items-center space-x-8 font-medium text-sm bg-white">
-                                        <Link to="/prostaff">
-                                            <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
-                                                Pro Staff
-                                            </li>
-                                        </Link>
-                                        <Link to="/blade">
-                                            <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
-                                                Blade
-                                            </li>
-                                        </Link>
-                                        <Link to="/clash">
-                                            <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
-                                                Clash
-                                            </li>
-                                        </Link>
-                                        <Link to="/ultra">
-                                            <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
-                                                Ultra
-                                            </li>
-                                        </Link>
-                                    </ul>
-                                </div>
+                                <ul class="hidden sm:ml-6 sm:flex items-center space-x-8 font-medium text-sm bg-white">
+                                    <Link to="/prostaff">
+                                        <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                            Pro Staff
+                                        </li>
+                                    </Link>
+                                    <Link to="/blade">
+                                        <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                            Blade
+                                        </li>
+                                    </Link>
+                                    <Link to="/clash">
+                                        <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                            Clash
+                                        </li>
+                                    </Link>
+                                    <Link to="/ultra">
+                                        <li className="font-bold text-xs md:text-lg uppercase tracking-widest cursor-pointer hover:text-rose-700 hover:scale-105 ease-out duration-300">
+                                            Ultra
+                                        </li>
+                                    </Link>
+                                </ul>
                             </div>
-                            <Link to="/bag">
-                                <div className="flex items-center">
-                                    <BagWidget />
-                                    <span className="-ml-4 -mt-6 px-1 text-xs rounded border border-rose-700">
-                                        {context.quantityBag()}
-                                    </span>
-                                </div>
+                            <Link className="flex items-center" to="/bag">
+                                <BagWidget />
+                                <span className="-ml-4 -mt-6 px-1 text-xs rounded border border-rose-700">
+                                    {context.quantityBag()}
+                                </span>
                             </Link>
                         </div>
                     </div>

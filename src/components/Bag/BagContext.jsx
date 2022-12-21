@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import { useState, createContext } from "react";
 import { toast } from "react-toastify";
 export const BagContext = createContext();
 

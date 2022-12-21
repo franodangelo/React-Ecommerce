@@ -1,11 +1,8 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-
-// import ItemListContainer from "./components/Catalog/ItemListContainer";
-// import ItemDetailContainer from "./components/Catalog/ItemDetailContainer";
-// import Bag from "./components/Bag/Bag";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 import BagContextProvider from "./components/Bag/BagContext";
 
 const ItemListContainer = lazy(() => import("./components/Catalog/ItemListContainer"));
@@ -17,7 +14,7 @@ export default function App() {
     <BagContextProvider>
       <BrowserRouter>
         <Navbar />
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route exact path="/" element={<ItemListContainer />} />
             <Route exact path="/:category" element={<ItemListContainer />} />
@@ -28,5 +25,5 @@ export default function App() {
         <Footer />
       </BrowserRouter>
     </BagContextProvider>
-  );
+  )
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { HiShoppingBag } from "react-icons/hi";
 
 export default function BagWidget() {
