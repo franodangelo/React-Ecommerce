@@ -41,7 +41,7 @@ export default function Bag() {
 
     function orderGenerated() {
         Swal.fire({
-            title: "!Ready for the game!",
+            title: "¡Ready for the game!",
             text: `We generated the order #${randomOrderNumber}. Hope you enjoy your new equipment :)`,
             icon: "success",
             width: "640px",
